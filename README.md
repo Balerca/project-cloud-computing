@@ -2,7 +2,7 @@
 
 Această documentație oferă o prezentare a proiectului pentru materia Cloud Computing care permite utilizatorilor să acceseze și să adauge restaurante printr-un API RESTful. Proiectul este găzduit pe platforma Vercel și utilizează serviciul de bază de date MongoDB Atlas pentru stocarea datelor.
 
-[Link aplicație](https://project-cloud-computing-jcom9f4cx-balercaoctavians-projects.vercel.app) .
+[Link aplicație](https://project-cloud-computing-f80c3800u-balercaoctavians-projects.vercel.app) .
 
 
 ## 2. Descriere problemă
