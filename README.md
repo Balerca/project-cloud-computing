@@ -100,4 +100,4 @@ success: true
 ```
 
 ## 5. Capturi de ecran
-![Alt Text](https://imgur.com/vaMklRa)
+![alt Text](https://i.imgur.com/vaMklRa.png)
