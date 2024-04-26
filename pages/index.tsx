@@ -88,6 +88,7 @@ export default function Home({
       const response = await fetch("/api/list");
       const restaurantsData = await response.json();
       setRestaurants(restaurantsData);
+      console.log(restaurantsData);
     } catch (error) {
       console.error("Error fetching restaurants:", error);
     }
