@@ -107,7 +107,7 @@ success: true
 
 ## 6. Referinte
 
-[MongoDB Atlas](https://mongodb.com/atlas)
-[MongoDB Documentation](https://docs.mongodb.com/) 
-[Vercel – Behind the scenes](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-[Vercel documentation](https://vercel.com/docs) 
+- [MongoDB Atlas](https://mongodb.com/atlas)
+- [MongoDB Documentation](https://docs.mongodb.com/) 
+- [Vercel – Behind the scenes](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Vercel documentation](https://vercel.com/docs) 
