@@ -101,3 +101,13 @@ success: true
 
 ## 5. Capturi de ecran
 ![alt Text](https://i.imgur.com/vaMklRa.png)
+![alt Text](https://i.imgur.com/PlHJt5q.png)
+![alt Text](https://i.imgur.com/x48pNGf.png)
+![alt Text](https://i.imgur.com/nLwFWUI.png)
+
+## 6. Referinte
+
+[MongoDB Atlas](https://mongodb.com/atlas)
+[MongoDB Documentation](https://docs.mongodb.com/) 
+[Vercel – Behind the scenes](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+[Vercel documentation](https://vercel.com/docs) 
