@@ -28,5 +28,5 @@ Vercel optimizes your deployments for global performance and accessibility, ensu
 Deployed using Vercel with MongoDB integration.
 
 Learn more about Vercel:
-[Vercel - Behind the scenes](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-[Vercel documentation](https://vercel.com/docs)
+- [Vercel - Behind the scenes](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Vercel documentation](https://vercel.com/docs)
