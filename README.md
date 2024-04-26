@@ -98,3 +98,6 @@ success: true
 ► [[Prototype]]: Object
 
 ```
+
+## 5. Capturi de ecran
+![Alt Text](https://imgur.com/vaMklRa)
