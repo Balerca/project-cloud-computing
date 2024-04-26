@@ -49,7 +49,7 @@ POST /api/list:
 GET /api/list 
 
 ### Response (200 OK):
-
+```bash
 [
     {
         "_id": "6123456789abcdef12345678",
@@ -68,7 +68,7 @@ GET /api/list
         "cuisine": "Cuisine2"
     }
 ]
-
+```
 ### POST /api/list:
 
 ### Request:
