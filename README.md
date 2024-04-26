@@ -46,7 +46,9 @@ POST /api/list:
 ### GET /api/list:
 
 ### Request:
+```bash
 GET /api/list 
+```
 
 ### Response (200 OK):
 ```bash
@@ -72,6 +74,7 @@ GET /api/list
 ### POST /api/list:
 
 ### Request:
+```bash
 POST /api/list
 Content-Type: application/json
 
@@ -82,7 +85,7 @@ Content-Type: application/json
     "zipcode": "67890",
     "cuisine": "New Cuisine"
 }
-
+```
 ### Response (201 Created):
 
 ```bash
