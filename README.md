@@ -7,8 +7,6 @@ If you want to learn more about MongoDB, visit the following pages:
 - [MongoDB Atlas](https://mongodb.com/atlas)
 - [MongoDB Documentation](https://docs.mongodb.com/)
 
-## Configuration
-
 ### Set up a MongoDB database
 
 Set up a MongoDB database either locally or with [MongoDB Atlas for free](https://mongodb.com/atlas).
