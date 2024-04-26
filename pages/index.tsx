@@ -1,6 +1,7 @@
 import Head from "next/head";
 import clientPromise from "../lib/mongodb";
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import { useEffect, useState } from "react";
 
 type ConnectionStatus = {
   isConnected: boolean;
@@ -34,6 +35,64 @@ export const getServerSideProps: GetServerSideProps<
 export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const [restaurants, setRestaurants] = useState<any[]>([]);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    address: "",
+    street: "",
+    zipcode: "",
+    cuisine: ""
+  });
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/list", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("New restaurant added:", data);
+        setRestaurants([...restaurants, data]);
+        setFormData({ name: "", address: "", street: "", zipcode: "", cuisine: "" });
+        fetchRestaurants();
+      } else {
+        console.error("Failed to add restaurant");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchRestaurants();
+  }, []);
+
+  const fetchRestaurants = async () => {
+    try {
+      const response = await fetch("/api/list");
+      const restaurantsData = await response.json();
+      setRestaurants(restaurantsData);
+    } catch (error) {
+      console.error("Error fetching restaurants:", error);
+    }
+  };
+
   return (
     <div className="container">
       <Head>
@@ -43,52 +102,63 @@ export default function Home({
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js with MongoDB!</a>
+          Balerca Octavian-Mihail cloud computing project
         </h1>
+        <h1>
 
-        {isConnected ? (
-          <h2 className="subtitle">You are connected to MongoDB</h2>
-        ) : (
-          <h2 className="subtitle">
-            You are NOT connected to MongoDB. Check the <code>README.md</code>{" "}
-            for instructions.
-          </h2>
-        )}
+        <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder="Restaurant Name"
+          required
+        />
+        <input
+          type="text"
+          name="address"
+          value={formData.address}
+          onChange={handleChange}
+          placeholder="Restaurant Address"
+          required
+        />
+        <input
+          type="text"
+          name="street"
+          value={formData.street}
+          onChange={handleChange}
+          placeholder="Restaurant Street"
+          required
+        />
+        <input
+          type="text"
+          name="zipcode"
+          value={formData.zipcode}
+          onChange={handleChange}
+          placeholder="Restaurant Zipcode"
+          required
+        />
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <input
+          type="text"
+          name="cuisine"
+          value={formData.cuisine}
+          onChange={handleChange}
+          placeholder="Cuisine"
+          required
+        />
+        <button type="submit">Add Restaurant</button>
+      </form>
 
+        </h1>
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          {restaurants.map((restaurant) => (
+            <div className="card" key={restaurant._id}>
+              <h2>{restaurant.name}</h2>
+              <p>{restaurant.cuisine}</p>
+            </div>
+          ))}
         </div>
       </main>
 
@@ -192,13 +262,13 @@ export default function Home({
           justify-content: center;
           flex-wrap: wrap;
 
-          max-width: 800px;
+          max-width: 1800px;
           margin-top: 3rem;
         }
 
         .card {
           margin: 1rem;
-          flex-basis: 45%;
+          flex-basis: 20%;
           padding: 1.5rem;
           text-align: left;
           color: inherit;
