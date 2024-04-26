@@ -49,6 +49,7 @@ POST /api/list:
 GET /api/list 
 
 ### Response (200 OK):
+
 [
     {
         "_id": "6123456789abcdef12345678",
@@ -63,7 +64,6 @@ GET /api/list
         "name": "Restaurant2",
         "address": "Address2",
         "street": "Street2",
-        
         "zipcode": "54321",
         "cuisine": "Cuisine2"
     }
