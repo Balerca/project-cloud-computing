@@ -85,12 +85,13 @@ Content-Type: application/json
 
 ### Response (201 Created):
 
-
-New restaurant added: {success: true, data: {...}} {
+```bash
+New restaurant added: {success: true, data: {...}} 
 data:
     acknowledged: true
     insertedId: "662b69ea06fff0e7bf397071"
     ► [[Prototype]]: Object
 success: true
 ► [[Prototype]]: Object
-}
+
+```
